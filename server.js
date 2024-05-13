@@ -11,7 +11,7 @@ rootPassword123
 
 app.get('/flights', (req, res) =>{
     
-    con.query("SELECT * FROM mainschema.flights", function (err, result) {
+    con.query("SELECT * FROM flight", function (err, result) {
         if (err) throw err;
         res.send(result);
       });
