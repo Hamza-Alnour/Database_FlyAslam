@@ -8,13 +8,14 @@ rootPassword123
 
 */
 
-const jsonObj = {
-    id: 2,
-    time: "12:10AM"
-}
 
-app.get('/', (req, res) =>{
-    res.send(jsonObj);
+app.get('/flights', (req, res) =>{
+    
+    con.query("SELECT * FROM mainschema.flights", function (err, result) {
+        if (err) throw err;
+        res.send(result);
+      });
+    
 });
 
 const con = mysql.createConnection({
@@ -22,6 +23,8 @@ const con = mysql.createConnection({
     user: "yourusername",
     password: "YourPassword123"
 });
+
+
 
 con.connect(function (err) {
     if (err) throw err;
