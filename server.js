@@ -1,7 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const app = express();
-
+const cors = require('cors')
 /*
 
 rootPassword123
@@ -9,10 +9,11 @@ rootPassword123
 */
 
 
-app.get('/flights', (req, res) =>{
+app.get('/flights', (req, res) => {
     
     con.query("SELECT * FROM flight", function (err, result) {
         if (err) throw err;
+        res.set('Access-Control-Allow-Origin', '*');
         res.send(result);
       });
     
@@ -36,6 +37,6 @@ con.connect(function (err) {
 
 
 
-
+app.use(cors({ origin: true, credentials: true }));
 app.listen(3000);
 
