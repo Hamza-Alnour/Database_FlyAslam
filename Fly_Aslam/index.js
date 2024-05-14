@@ -1,17 +1,20 @@
 const search_button = document.getElementById("search_button");
-let flights;
-let views = [];
+
+search_button.addEventListener("click", fetchFlightsData);
 
 
-search_button.addEventListener("click",searchByLocation )
 
-function searchByLocation(){
-    const location_input = document.getElementById("location_input");
 
-    foreach(flight in flights);{
-        if(location_input === flight.location){
-            views.add(flight);
+async function fetchFlightsData(params) {
+    const response = await fetch('http://localhost:3000/flights', {
+
+        method: "GET",
+        //body: JSON.stringify(params),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
         }
-    }
+    });
 
+    const flights = await response.json();
+    console.log(flights);
 }
