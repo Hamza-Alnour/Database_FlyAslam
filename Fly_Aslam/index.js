@@ -3,10 +3,6 @@ const search_button = document.getElementById("search_button");
 search_button.addEventListener("click", fetchFlightsData);
 
 
-/**fix commit
- * 
- */
-
 async function fetchFlightsData(params) {
     const response = await fetch('http://localhost:3000/flights', {
 
