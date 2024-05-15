@@ -14,8 +14,6 @@ var titleImageList = [
 search_button.addEventListener("click", fetchFlightsData);
 
 
-
-
 async function fetchFlightsData(params) {
     //http://localhost:3000/flights
     const response = await fetch('http://localhost:3000/flights', {
