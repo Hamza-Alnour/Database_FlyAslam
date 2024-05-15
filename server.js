@@ -30,7 +30,7 @@ const con = mysql.createConnection({
 con.connect(function (err) {
     if (err) throw err;
     console.log("Connected!");
-    con.query("USE mainschemea", function (err, result) {
+    con.query("USE flyaslam", function (err, result) {
         if (err) throw err;
       });
 });
