@@ -1,5 +1,5 @@
 
-let allowed_seats = 0;
+export const allowed_seats = 0;
 let booked_seats = [];
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll(".seatButton");
@@ -22,6 +22,7 @@ function ChooseSeat(event, seat){
         console.log(seatNo);
         allowed_seats += 1;
         booked_seats.push(seat);
+        TotalCost();
 
     }
     else{
@@ -38,11 +39,26 @@ function unChooseSeat(event, seat){
     seat.style.color = "white";
     allowed_seats -= 1;
     booked_seats.pop(seat);
+    TotalCost();
 }
 
 
 
+function TotalCost() {
+    const section = document.getElementById("booking_section");
+    let h3 = section.querySelector('h3');
 
+    if (!h3) {
+        h3 = document.createElement('h3');
+        section.appendChild(h3);
+    }
+
+    h3.innerHTML = `Total cost: ${allowed_seats * 399}`;
+}
+
+function continueTopayment(){
+
+}
 
 
 

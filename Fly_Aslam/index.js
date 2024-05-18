@@ -94,20 +94,20 @@ function displayFlight(){
           </ul>
           <ul id="card_row2">
             <ul style="display: grid; grid-template-columns: auto auto auto;  grid-column-gap: 185px;">
-              <p style="font-size: 20px; font-weight: bold;">${flight.Source}</p>
+              <p style="font-size: 20px; font-weight: bold;">${flight.Flight_src}</p>
               <img id="plan" src="assets/aeroplane-airplane-icon-on-transparent-background-free-png.webp">
-              <p style="font-size: 20px; font-weight: bold;">${flight.Destination}</p>
+              <p style="font-size: 20px; font-weight: bold;">${flight.Flight_dst}</p>
             </ul>
-              <p>${flight.Date}</p>
+              <p>${flight.Flight_date}</p>
           </ul>
           <ul id="card_row3">
-            <p style="font-size: 20px;">${flight.DepartureTime}</p>
+            <p style="font-size: 20px;">${flight.Dep_time}</p>
             <div id="line"></div>
-            <p style="font-size: 20px;">${flight.ArriveTime}</p>
+            <p style="font-size: 20px;">${flight.Arr_time}</p>
           </ul>
           <ul id="card_row4">
             <p style="font-size: 15px;">3 Seats</p>
-            <button id="details"><a href="">Fly Details</a></button>
+            <button id="details"><a href="Details.html">Fly Details</a></button>
           </ul>
         </div>
         `;
@@ -126,7 +126,7 @@ function FilterFlights(){
   console.log("in");
     const location_input = document.getElementById("location_input").value;
     flights.forEach((flight, index) => {
-        if(flight.Destination === location_input){
+        if(flight.Flight_dst === location_input){
             views.push(flight);
         }
     });
@@ -199,20 +199,20 @@ function FilterFlights(){
         </ul>
         <ul id="card_row2">
           <ul style="display: grid; grid-template-columns: auto auto auto;  grid-column-gap: 185px;">
-            <p style="font-size: 20px; font-weight: bold;">${flight.Source}</p>
+            <p style="font-size: 20px; font-weight: bold;">${flight.Flight_src}</p>
             <img id="plan" src="assets/aeroplane-airplane-icon-on-transparent-background-free-png.webp">
-            <p style="font-size: 20px; font-weight: bold;">${flight.Destination}</p>
+            <p style="font-size: 20px; font-weight: bold;">${flight.Flight_dst}</p>
           </ul>
-            <p>${flight.Date}</p>
+            <p>${flight.Flight_date}</p>
         </ul>
         <ul id="card_row3">
-          <p style="font-size: 20px;">${flight.DepartureTime}</p>
+          <p style="font-size: 20px;">${flight.Dep_time}</p>
           <div id="line"></div>
-          <p style="font-size: 20px;">${flight.ArriveTime}</p>
+          <p style="font-size: 20px;">${flight.Arr_time}</p>
         </ul>
         <ul id="card_row4">
           <p style="font-size: 15px;">3 Seats</p>
-          <button id="details"><a href="">Fly Details</a></button>
+          <button id="details"><a href="Details.html">Fly Details</a></button>
         </ul>
       </div>
       `;
