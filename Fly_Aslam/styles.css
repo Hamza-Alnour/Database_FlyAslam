@@ -776,6 +776,12 @@ a{
   font-size: 20px;
   color: white;
 }
+#seat_button:disabled {
+  /* Styles for disabled button */
+  background-color: #cccccc; /* Faded color */
+  color: #999999; /* Text color for disabled state */
+  cursor: not-allowed; /* Change cursor to not-allowed */
+}
 
 #side_seats{
   display: grid;

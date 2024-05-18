@@ -117,18 +117,10 @@ function displayFlight(){
 
 }
 
-
 function getRandomTitleImage() {
   var randomIndex = Math.floor(Math.random() * titleImageList.length);
   return titleImageList[randomIndex];
 }
-
-
-
-
-
-
-
 
 function FilterFlights(){
   console.log("in");
@@ -235,4 +227,5 @@ document.body.addEventListener('click', function(event) {
       console.log('Button clicked!');
       FilterFlights();
   }
+  
 });
